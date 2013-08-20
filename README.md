@@ -40,15 +40,6 @@ package_sync: {
         files: {
           "default" : ['../docs/package.json','../grunt/package.json','../bower.json']
         }
-      },
-      grunt:{
-        options: {
-          master: "package.json",
-          properties:["version"]
-        },
-        files: {
-          "default" : ["../docs/package.json","../bower.json","../package.json"]
-        }
       }
     }
 })
