@@ -16,6 +16,7 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('package_sync', 'A grunt plugin to keep data in multiple package.json in sync.', function() {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
+      indent: 2
     });
 
     // Iterate over all specified file groups.
@@ -36,7 +37,7 @@ module.exports = function(grunt) {
           file[options.properties[i]] = master[options.properties[i]];
         }
 
-        var str = JSON.stringify(file,null,2);
+        var str = JSON.stringify(file, null, options.indent);
         grunt.file.write(filepath, str);
         return file;
       });
