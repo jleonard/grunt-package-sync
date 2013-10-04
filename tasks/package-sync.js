@@ -38,7 +38,7 @@ module.exports = function(grunt) {
         }
 
         var str = JSON.stringify(file, null, options.indent);
-        grunt.file.write(filepath, str);
+        grunt.file.write(filepath, str + '\n');
         return file;
       });
 
